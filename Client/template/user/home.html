@@ -1,0 +1,35 @@
+<div class="banner">
+    <div id="wrapper">
+        <div class="slider-wrapper theme-default">
+            <div id="slider" class="nivoSlider">
+                <img src="img/slider/tablet.jpg" data-thumb="" alt="" title="Tablet" />
+                <img src="img/slider/acer1.jpg" data-thumb="" alt="" title="Acer laptop" />
+                <img src="img/slider/geforce.jpg" data-thumb="" alt="" title="Geforce" data-transition="slideInLeft" />
+                <img src="img/slider/asus2.jpg" data-thumb="" alt="" title="Asus" />
+            </div>
+        </div>
+    </div>
+</div>
+{{ message}}
+<div class="categories">
+    <!--@foreach(ProductsOfCategory item in Model.ListProductsOfCategory)
+    {-->
+        <div class="cat">
+            <div class="cat-header bottom_border" style="margin-bottom: 5px;">
+                <h4 class="col-sm-3 col-md-2 cat-header-name" onclick="moveToCategory('laptop');" style="cursor: progress;">@item.CategoryName</h4>
+                <a class="col-sm-2 col-md-2 see-more" href="@Url.Action("Index", "ShowProductsByCategory", new { category = @item.CategoryID })">Xem thêm ...</a>
+            </div>
+        </div>
+        <div class="cat-content bottom_border">
+        <!--    @foreach(PRODUCT product in @item.ListProducts)
+            {-->
+                <div class="product">
+                    <img src="@product.PRODUCT_IMG" alt="">
+                    <a href="@Url.Action("Index", "ProductDetail", new { idProduct = @product.PRODUCT_ID })">
+                    <p class="product-name">@product.MODEL</p></a>
+                    <p class="price">@product.PRICE</p>
+                </div>
+            <!--}-->
+        </div>
+    <!--}-->
+</div>
