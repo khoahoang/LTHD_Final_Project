@@ -1,38 +1,7 @@
-mobileStoreApp.controller('HomeController', function ($scope) {
-    $scope.pro = [{
-    'Model' : 'ABC',
-    'Price' : '17'
-  },
-  {
-    'Model' : 'ABC',
-    'Price' : '17'
-  },
-  {
-    'Model' : 'ABC',
-    'Price' : '17'
-  },
-  {
-    'Model' : 'ABC',
-    'Price' : '17'
-  },
-  {
-    'Model' : 'ABC',
-    'Price' : '17'
-  }]
-
-  $scope.cat = [{
-    'Name' : 'ABC'
-  },
-  {
-    'Name' : 'ABC'
-  },
-  {
-    'Name' : 'ABC'
-  },
-  {
-    'Name' : 'ABC'
-  },
-  {
-    'Name' : 'ABC'
-  }]
+mobileStoreApp.controller('HomeController', function ($http, $scope) {
+    $http.get("http://localhost:41127/api/home")
+    .then(function(response) {
+      $scope.cat = response.category;
+      $scope.pro = response.listProduct;
+    });
 })

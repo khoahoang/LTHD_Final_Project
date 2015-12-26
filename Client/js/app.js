@@ -1,4 +1,4 @@
-var mobileStoreApp = angular.module('mobileStoreApp', ['ngRoute']);
+var mobileStoreApp = angular.module('mobileStoreApp', ['ngRoute', 'LocalStorageModule', 'angular-loading-bar']);
 
 mobileStoreApp.config(['$routeProvider',
   function($routeProvider) {

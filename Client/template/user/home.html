@@ -24,7 +24,7 @@
     <div ng-repeat="x in cat">
         <div class="cat">
             <div class="cat-header bottom_border" style="margin-bottom: 5px;">
-                <h4 class="col-sm-3 col-md-2 cat-header-name" onclick="moveToCategory('laptop');" style="cursor: progress;"><!-- @item.CategoryName -->{{x.Name}}</h4>
+                <h4 class="col-sm-3 col-md-2 cat-header-name" onclick="moveToCategory('laptop');" style="cursor: progress;"><!-- @item.CategoryName -->{{x.CATEGORY_NAME}}</h4>
                 <!-- <a class="col-sm-2 col-md-2 see-more" href="@Url.Action("Index", "ShowProductsByCategory", new { category = @item.CategoryID })">Xem thêm ...</a> -->
                 <a class="col-sm-2 col-md-2 see-more" href="#">Xem thêm ...</a>
             </div>
@@ -38,8 +38,8 @@
                     <img src="#" alt="">
                     <!-- <a href="@Url.Action("Index", "ProductDetail", new { idProduct = @product.PRODUCT_ID })"> -->
                     <a href="#">
-                    <p class="product-name"><!-- @product.MODEL -->{{y.Model}}</p></a>
-                    <p class="price"><!-- @product.PRICE -->{{y.Price}}</p>
+                    <p class="product-name"><!-- @product.MODEL -->{{y.MODEL}}</p></a>
+                    <p class="price"><!-- @product.PRICE -->{{y.PRICE}}</p>
                 </div>
             </div>
         </div>
