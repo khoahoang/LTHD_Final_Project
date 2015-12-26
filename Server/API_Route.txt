@@ -1,0 +1,21 @@
+/api/home
+{
+List<ProductofCategory>
+	CATEGORY category 	
+	List<PRODUCT> listProduct
+}
+----------
+
+/api/product/{id}
+{
+FullProductInfo
+	PRODUCT product
+	DESCRIPTION description
+	List<ATTRIBUTE> attribute
+}
+-----------
+
+/api/category/{id}
+{
+List<PRODUCT>
+}
