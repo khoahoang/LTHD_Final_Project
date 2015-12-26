@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using MobileSt.Models;
+using Newtonsoft.Json;
+using Authentication;
+using Authentication.Models;
+namespace MobileSt.Controllers
+{
+    public class ProductController : ApiController
+    {
+        [HttpGet]
+        public IHttpActionResult GetProduct(int id)
+        {
+            FullProductInfo ProductDetail = new FullProductInfo();
+            using (WEBDATAEntities data = new WEBDATAEntities())
+            {
+                ProductDetail.product = (from e in data.PRODUCTs
+                           where e.PRODUCT_ID == id
+                           select e).FirstOrDefault();
+
+                ProductDetail.description = (from e in data.PRODUCT_DESCRIPTION
+                                             where e.PRODUCT_ID == id
+                                             select e).FirstOrDefault();
+
+                ProductDetail.attribute = (from e in data.ATTRIBUTEs                                           
+                                               where e.PRODUCT_ID == id
+                                               select e).ToList();
+            }
+            string json = JsonConvert.SerializeObject(ProductDetail);
+            return Ok(json);
+        }
+    }
+}
