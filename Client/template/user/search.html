@@ -1,0 +1,49 @@
+<!-- @model PagedList.IPagedList<MobileStore.Models.PRODUCT>
+@using PagedList.Mvc;
+<link href="~/Content/css/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Kết quả tìm kiếm";
+} -->
+<div class="banner">
+    <div id="wrapper">
+        <div class="slider-wrapper theme-default">
+            <div id="slider" class="nivoSlider">
+                <img src="@Url.Content("img/slider/tablet.jpg")" data-thumb="" alt="" title="Tablet" />
+                <img src="@Url.Content("img/slider/acer1.jpg")" data-thumb="" alt="" title="Acer laptop" />
+                <img src="@Url.Content("img/slider/geforce.jpg")" data-thumb="" alt="" title="Geforce" data-transition="slideInLeft" />
+                <img src="@Url.Content("imgslider/asus2.jpg")" data-thumb="" alt="" title="Asus" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="cat-content bottom_border">
+    <div class="title row">
+        <!-- <h1>Kết quả tìm kiếm @ViewBag.SearchName</h1> -->
+        <h1>Kết quả tìm kiếm {{SearchName}}</h1>
+    </div>
+    <div class="content row">
+        <!-- <p>@ViewBag.Message</p> -->
+        <p>{{Message}}</p>
+        
+        
+        <!-- @foreach (var item in Model)
+        {
+            <div class="product">
+                <img src="@item.PRODUCT_IMG" alt="">
+                <a href="@Url.Action("Index", "ProductDetail", new { idProduct = @item.PRODUCT_ID })">
+                    <p class="product-name">@item.MODEL</p>
+                </a>
+                <p class="price">@item.PRICE</p>
+            </div>
+        } -->
+    </div>
+</div>
+<!-- Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { search = ViewBag.SearchName, page })) -->
+
+
+

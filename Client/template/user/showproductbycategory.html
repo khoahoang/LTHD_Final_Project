@@ -1,0 +1,29 @@
+<div class="banner">
+    <div id="wrapper">
+        <div class="slider-wrapper theme-default">
+            <div id="slider" class="nivoSlider">
+                <img src="img/slider/tablet.jpg" data-thumb="" alt="" title="Tablet" />
+                <img src="img/slider/acer1.jpg" data-thumb="" alt="" title="Acer laptop" />
+                <img src="img/slider/geforce.jpg" data-thumb="" alt="" title="Geforce" data-transition="slideInLeft" />
+                <img src="img/slider/asus2.jpg" data-thumb="" alt="" title="Asus" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="categories container">
+    <div class="title row">
+        <h1>{{CatName}}</h1>
+    </div>
+    <div class="content row">
+        <p>{{Message}}</p>
+        <div ng-repeat="x in pro">
+            <div class="product">
+                <img src="#" alt="hinh anh">
+                    <a href="#">
+                        <p class="product-name">{{x.Model}}</p>
+                    </a>
+                <p class="price">{{x.Price}}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -7,14 +7,30 @@ mobileStoreApp.config(['$routeProvider',
 		templateUrl: 'template/user/home.html',
 		controller: 'HomeController'
 		}).
-		when('/phones', {
-		templateUrl: 'partials/phone-list.html',
-		controller: 'PhoneListCtrl'
+
+		when('/contact', {
+		templateUrl: 'template/user/contact.html'
 		}).
-		when('/phones/:phoneId', {
-		templateUrl: 'partials/phone-detail.html',
-		controller: 'PhoneDetailCtrl'
+
+		when('/about', {
+		templateUrl: 'template/user/about.html'
 		}).
+
+		when('/showproductbycategory', {
+		templateUrl: 'template/user/showproductbycategory.html',
+		controller: 'ShowProductByCategoryController'
+		}).
+
+		when('/shoppingcart', {
+		templateUrl: 'template/user/shoppingcart.html',
+		controller: 'ShoppingCartController'
+		}).
+
+		when('/productdetail', {
+		templateUrl: 'template/user/productdetail.html',
+		controller: 'ProductDetailController'
+		}).
+
 		otherwise({
 		redirectTo: '/home'
 		});

@@ -1,0 +1,103 @@
+<script src="/Scripts/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        // Document.ready -> link up remove event handler
+        $(".RemoveLink").click(function () {
+            // Get the id from the link
+            var recordToDelete = $(this).attr("data-id");
+            if (recordToDelete != '') {
+                // Perform the ajax post
+                $.post("/ShoppingCart/RemoveFromCart", { "id": recordToDelete },
+                    function (data) {
+                        // Successful requests get here
+                        // Update the page elements
+                        if (data.ItemCount == 0) {
+                            $('#row-' + data.DeleteId).fadeOut('slow');
+                        } else {
+                            $('#item-count-' + data.DeleteId).text(data.ItemCount);
+                        }
+                        $('#cart-total').text(data.CartTotal);
+                        $('#update-message').text(data.Message);
+                        $('#cart-status').text('Cart (' + data.CartCount + ')');
+                        $('#ProductInCart').text(data.CartTotal);
+                    });
+            }
+        });
+    });
+</script>
+<h2>Giỏ hàng của tui</h2>
+<div id="update-message"> </div>
+<table>
+    <tr>
+        <th>
+            Model sản phẩm
+        </th>
+        <th>
+            Giá (1 sản phẩm)
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Chỉnh sửa
+        </th>
+    </tr>
+
+    <tr ng-repeat="x in sCart">
+        <td>
+            <a href="#">{{x.Name}}</a>
+            <!--@Html.ActionLink(item.PRODUCT.MODEL, "Index", "ProductDetail", new { id = item.PRODUCT_ID }, null)-->
+        </td>
+        <td>
+            {{x.Price}}
+            <!--@item.PRODUCT.PRICE-->
+        </td>
+        <!--<td id="item-count-@item.RECORD_ID">-->
+        <td id="1">
+            {{x.Count}}
+            <!--@item.COUNT-->
+        </td>
+        <td>
+            <a href="#" class="RemoveLink" data-id="1" style="float:left; text-decoration:none">
+                ( - )
+            </a>
+            <!--<a href="#" class="RemoveLink" data-id="@item.RECORD_ID" style="float:left; text-decoration:none">
+                ( - )
+            </a>-->
+        </td>
+    </tr>
+
+    <!--@foreach (var item in Model.CartItems)
+    {
+        <tr id="row-@item.RECORD_ID">
+            <td>
+                @Html.ActionLink(item.PRODUCT.MODEL, "Index", "ProductDetail", new { id = item.PRODUCT_ID }, null)
+            </td>
+            <td>
+                @item.PRODUCT.PRICE
+            </td>
+            <td id="item-count-@item.RECORD_ID">
+                @item.COUNT
+            </td>
+            <td>
+                <a href="#" class="RemoveLink" data-id="@item.RECORD_ID" style="float:left; text-decoration:none">
+                    ( - )
+                </a>
+            </td>
+        </tr>
+    }
+    <tr>
+        <td>
+            Tổng
+        </td>
+        <td></td>        
+        <td id="cart-total">
+            @Model.CartTotal
+        </td>
+        <td></td>
+    </tr>-->
+</table>
+<p class="button">
+    <a href="#">Đặt hàng</a>
+    <!--@Html.ActionLink("Đặt hàng", "AddressAndOrder", "Order")-->
+</p>
