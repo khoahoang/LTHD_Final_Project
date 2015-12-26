@@ -7,6 +7,7 @@ using System.Web.Http;
 using MobileSt.Models;
 using Newtonsoft.Json;
 using Authentication;
+using Authentication.Models;
 
 namespace MobileSt.Controllers
 {
@@ -16,7 +17,7 @@ namespace MobileSt.Controllers
         public IHttpActionResult GetProductOfCategory(int id)
         {
             List<PRODUCT> listProduct = new List<PRODUCT>();
-            using (WEBDATAEntities data = new WEBDATAEntities())
+            using (MobileStoreServiceEntities data = new MobileStoreServiceEntities())
             {
                 listProduct = (from e in data.PRODUCT_CATEGORY
                                join f in data.PRODUCTs on e.PRODUCT_ID equals f.PRODUCT_ID

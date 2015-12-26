@@ -19,7 +19,7 @@ namespace MobileSt.Controllers
         {
 
             List<ProductofCategory> pc = new List<ProductofCategory>();
-            using (WEBDATAEntities data = new WEBDATAEntities())
+            using (MobileStoreServiceEntities data = new MobileStoreServiceEntities())
             {
                 List<CATEGORY> lst_cat = new List<CATEGORY>();
                 lst_cat = (from e in data.CATEGORies

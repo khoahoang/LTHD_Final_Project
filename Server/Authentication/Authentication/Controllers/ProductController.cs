@@ -16,7 +16,7 @@ namespace MobileSt.Controllers
         public IHttpActionResult GetProduct(int id)
         {
             FullProductInfo ProductDetail = new FullProductInfo();
-            using (WEBDATAEntities data = new WEBDATAEntities())
+            using (MobileStoreServiceEntities data = new MobileStoreServiceEntities())
             {
                 ProductDetail.product = (from e in data.PRODUCTs
                            where e.PRODUCT_ID == id
