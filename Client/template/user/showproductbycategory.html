@@ -18,8 +18,8 @@
         <p></p>
         <div ng-repeat="x in pro">
             <div class="product">
-                <img src="#" alt="hinh anh">
-                    <a href="#">
+                <img src="./{{x.PRODUCT_IMG}}" alt="hinh anh">
+                    <a href="index.html#/productdetail/{{x.PRODUCT_ID}}">
                         <p class="product-name">{{x.MODEL}}</p>
                     </a>
                 <p class="price">{{x.PRICE}}</p>

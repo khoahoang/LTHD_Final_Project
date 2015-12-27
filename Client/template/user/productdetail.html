@@ -15,7 +15,7 @@
 <div class="row product_main_info">
     <div class="col-xs-12 col-sm-4 col-md-4">
         <div class="product_view">
-            <img src="#" alt="image" width="200px" height="200px" border="2px" />
+            <img src="./{{pro.product.PRODUCT_IMG}}" alt="image" width="200px" height="200px" border="2px" />
         </div>
     </div>
     <div class="col-xs-12 col-sm-8 col-md-8">
@@ -23,14 +23,17 @@
             <!-- <p><span style="color: #3399FF;">Nhà sản xuất:</span> @Model.Manufacture.MANUFACTURE_NAME</p>
             <p><span style="color: #3399FF;">Mã sản phẩm:</span> @Model.Product.MODEL_ID</p>
             <p style="color: red;"><span style="color: #3399FF;">Tình trạng:</span> @Model.Status</p> -->
-            <p><span style="color: #3399FF;">Nhà sản xuất:</span> {{pro.product.MANUFACTURE_ID}}</p>
+            <p><span style="color: #3399FF;">Nhà sản xuất:</span> {{pro.NSX}}</p>
             <p><span style="color: #3399FF;">Mã sản phẩm:</span> {{pro.product.MODEL_ID}}</p>
-            <p style="color: red;"><span style="color: #3399FF;">Tình trạng:</span> {{pro.product.QUANTITY}}</p>
+            <p style="color: red;"><span style="color: #3399FF;">Tình trạng:</span> {{pro.Status}}</p>
         </div>
         <div class="row top_border" style="padding: 10px 0px;">
             <!-- <b style="color: red;">Giá: @Model.Product.PRICE VND (Đã có VAT)</b> -->
             <b style="color: red;">Giá: {{pro.product.PRICE}} VND (Đã có VAT)</b>
         </div>
+        <p class="button">
+            Thêm vào giỏ hàng
+        </p> 
         <!-- @if(@Model.Product.QUANTITY > 0)
         {
             <p class="button">

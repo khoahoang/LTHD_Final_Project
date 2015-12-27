@@ -46,7 +46,7 @@
             <div class="container">
                 <div class="row">
                     <div class="logo col-md-2">
-                        <a href="@Url.Action("Index", "Home")"><img src="img/logo/logo.jpg" width="200" height="65" alt="logo" style="cursor: pointer;"></a>
+                        <a href="index.html#/home"><img src="img/logo/logo.jpg" width="200" height="65" alt="logo" style="cursor: pointer;"></a>
                     </div>
                     <div class="search-bar col-md-4 col-md-offset-1">
                         <div class="row">
@@ -63,7 +63,7 @@
                             <div class="col-md-1">
                                 <img width="25px" src="img/giohang.jpg" />
                             </div>
-                            <b class="col-md-6 cart-status"><a href="#">Giỏ hàng của bạn</a>
+                            <b class="col-md-6 cart-status"><a href="index.html#/shoppingcart">Giỏ hàng của bạn</a>
                                 <span id="ProductInCart">0
                                     <!--*@if(@Session["ProductInCart"] != null)
                                 {
@@ -85,9 +85,9 @@
                                     <span> | </span>
                                     @Html.ActionLink("Đăng nhập", "Login", "Account")
                                 }-->
-                                <a href="#">Đăng kí</a>
+                                <a href="index.html#/signup">Đăng kí</a>
                                     <span> | </span>
-                                <a href="#">Đăng nhập</a>
+                                <a href="index.html#/login">Đăng nhập</a>
                                 </b>
                             </div>
                         </div>                        
@@ -100,10 +100,10 @@
                 <div class="container">
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-left">
-                            <li class="active"><a href="@Url.Action("Index", "Home")">Trang chủ</a></li>
-                            <li><a href="@Url.Action("Index", "ShowProductsByCategory", new { category = 2 }) ">Laptop</a></li>
-                            <li><a href="@Url.Action("Index", "ShowProductsByCategory", new { category = 3 })">Máy tính bảng</a></li>
-                            <li><a href="@Url.Action("Index", "ShowProductsByCategory", new { category = 1 }) ">Điện thoại</a></li>
+                            <li class="active"><a href="index.html#/home">Trang chủ</a></li>
+                            <li><a href="index.html#/showproductbycategory/2">Laptop</a></li>
+                            <li><a href="index.html#/showproductbycategory/3">Máy tính bảng</a></li>
+                            <li><a href="index.html#/showproductbycategory/1">Điện thoại</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->

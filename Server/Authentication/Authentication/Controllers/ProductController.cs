@@ -29,9 +29,14 @@ namespace MobileSt.Controllers
             FullProductInfo ProductDetail = new FullProductInfo();
             using (MobileStoreServiceEntities data = new MobileStoreServiceEntities())
             {
+                List<MANUFACTURE> list = data.MANUFACTUREs.ToList();
+
                 ProductDetail.product = (from e in data.PRODUCTs
                            where e.PRODUCT_ID == id
                            select e).FirstOrDefault();
+
+                MANUFACTURE m = list.SingleOrDefault(x => x.MANUFACTURE_ID == ProductDetail.product.MANUFACTURE_ID);
+                ProductDetail.NSX = m.MANUFACTURE_NAME;
 
                 ProductDetail.description = (from e in data.PRODUCT_DESCRIPTION
                                              where e.PRODUCT_ID == id
