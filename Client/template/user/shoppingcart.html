@@ -43,18 +43,18 @@
         </th>
     </tr>
 
-    <tr ng-repeat="x in sCart">
+    <tr ng-repeat="x in orders">
         <td>
-            <a href="#">{{x.Name}}</a>
+            <a href="#">{{x.orderID }}</a>
             <!--@Html.ActionLink(item.PRODUCT.MODEL, "Index", "ProductDetail", new { id = item.PRODUCT_ID }, null)-->
         </td>
         <td>
-            {{x.Price}}
+            {{x.customerName }}
             <!--@item.PRODUCT.PRICE-->
         </td>
         <!--<td id="item-count-@item.RECORD_ID">-->
         <td id="1">
-            {{x.Count}}
+            {{x.shipperCity }}
             <!--@item.COUNT-->
         </td>
         <td>

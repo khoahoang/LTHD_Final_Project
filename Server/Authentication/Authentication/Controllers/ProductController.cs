@@ -12,8 +12,19 @@ namespace MobileSt.Controllers
 {
     public class ProductController : ApiController
     {
+        #region Helper
+        public HttpResponseMessage CreateResponse<T>(HttpStatusCode statusCode, T data)
+        {
+            return Request.CreateResponse(statusCode, data);
+        }
+
+        public HttpResponseMessage CreateResponse(HttpStatusCode httpStatusCode)
+        {
+            return Request.CreateResponse(httpStatusCode);
+        }
+        #endregion
         [HttpGet]
-        public IHttpActionResult GetProduct(int id)
+        public HttpResponseMessage GetProduct(int id)
         {
             FullProductInfo ProductDetail = new FullProductInfo();
             using (MobileStoreServiceEntities data = new MobileStoreServiceEntities())
@@ -31,7 +42,7 @@ namespace MobileSt.Controllers
                                                select e).ToList();
             }
             string json = JsonConvert.SerializeObject(ProductDetail);
-            return Ok(json);
+            return CreateResponse(HttpStatusCode.OK, ProductDetail);
         }
     }
 }

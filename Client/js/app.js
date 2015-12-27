@@ -16,22 +16,40 @@ mobileStoreApp.config(['$routeProvider',
 		templateUrl: 'template/user/about.html'
 		}).
 
-		when('/showproductbycategory', {
+		when('/showproductbycategory/:catId', {
 		templateUrl: 'template/user/showproductbycategory.html',
 		controller: 'ShowProductByCategoryController'
 		}).
 
 		when('/shoppingcart', {
 		templateUrl: 'template/user/shoppingcart.html',
-		controller: 'ShoppingCartController'
+		controller: 'OrdersController'
 		}).
 
-		when('/productdetail', {
+		when('/productdetail/:proId', {
 		templateUrl: 'template/user/productdetail.html',
 		controller: 'ProductDetailController'
+		}).
+
+		when('/login', {
+		templateUrl: 'template/user/login.html',
+		controller: 'LoginController'
+		}).
+
+		when('/signup', {
+		templateUrl: 'template/user/signup.html',
+		controller: 'SignUpController'
 		}).
 
 		otherwise({
 		redirectTo: '/home'
 		});
   }]);
+
+mobileStoreApp.run(['authService', function (authService) {
+    authService.fillAuthData();
+}]);
+
+mobileStoreApp.config(function ($httpProvider) {
+    $httpProvider.interceptors.push('authInterceptorService');
+});

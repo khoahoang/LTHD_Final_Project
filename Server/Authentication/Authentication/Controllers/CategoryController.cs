@@ -13,8 +13,19 @@ namespace MobileSt.Controllers
 {
     public class CategoryController : ApiController
     {
+        #region Helper
+        public HttpResponseMessage CreateResponse<T>(HttpStatusCode statusCode, T data)
+        {
+            return Request.CreateResponse(statusCode, data);
+        }
+
+        public HttpResponseMessage CreateResponse(HttpStatusCode httpStatusCode)
+        {
+            return Request.CreateResponse(httpStatusCode);
+        }
+        #endregion
         [HttpGet]
-        public IHttpActionResult GetProductOfCategory(int id)
+        public HttpResponseMessage GetProductOfCategory(int id)
         {
             List<PRODUCT> listProduct = new List<PRODUCT>();
             using (MobileStoreServiceEntities data = new MobileStoreServiceEntities())
@@ -25,8 +36,8 @@ namespace MobileSt.Controllers
                                select f).Take(10).ToList();
             }
 
-            string json = JsonConvert.SerializeObject(listProduct);
-            return Ok(json);
+            //string json = JsonConvert.SerializeObject(listProduct);
+            return CreateResponse(HttpStatusCode.OK, listProduct);
         }
     }
 }

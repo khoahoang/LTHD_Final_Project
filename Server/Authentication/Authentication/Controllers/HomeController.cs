@@ -14,8 +14,19 @@ namespace MobileSt.Controllers
 {
     public class HomeController : ApiController
     {
+        #region Helper
+        public HttpResponseMessage CreateResponse<T>(HttpStatusCode statusCode, T data)
+        {
+            return Request.CreateResponse(statusCode, data);
+        }
+
+        public HttpResponseMessage CreateResponse(HttpStatusCode httpStatusCode)
+        {
+            return Request.CreateResponse(httpStatusCode);
+        }
+        #endregion
         [HttpGet]
-        public IHttpActionResult index()
+        public HttpResponseMessage index()
         {
 
             List<ProductofCategory> pc = new List<ProductofCategory>();
@@ -35,8 +46,8 @@ namespace MobileSt.Controllers
                     pc.Add(temp);
                 }
             }
-            string json = JsonConvert.SerializeObject(pc);
-            return Ok(json);
+            //string json = JsonConvert.SerializeObject(pc);
+            return CreateResponse(HttpStatusCode.OK, pc);
         }
     }
 

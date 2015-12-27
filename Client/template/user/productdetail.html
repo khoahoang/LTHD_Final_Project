@@ -9,13 +9,13 @@
 <div class="row product_title">
     <h2>
         <!-- @Model.Product.MODEL -->
-        {{Model}}
+        {{pro.product.MODEL}}
     </h2>
 </div>
 <div class="row product_main_info">
     <div class="col-xs-12 col-sm-4 col-md-4">
         <div class="product_view">
-            <img src="@Model.Product.PRODUCT_IMG" alt="image" width="200px" height="200px" border="2px" />
+            <img src="#" alt="image" width="200px" height="200px" border="2px" />
         </div>
     </div>
     <div class="col-xs-12 col-sm-8 col-md-8">
@@ -23,13 +23,13 @@
             <!-- <p><span style="color: #3399FF;">Nhà sản xuất:</span> @Model.Manufacture.MANUFACTURE_NAME</p>
             <p><span style="color: #3399FF;">Mã sản phẩm:</span> @Model.Product.MODEL_ID</p>
             <p style="color: red;"><span style="color: #3399FF;">Tình trạng:</span> @Model.Status</p> -->
-            <p><span style="color: #3399FF;">Nhà sản xuất:</span> {{Manufacture}}</p>
-            <p><span style="color: #3399FF;">Mã sản phẩm:</span> {{ModelId}}</p>
-            <p style="color: red;"><span style="color: #3399FF;">Tình trạng:</span> {{Status}}</p>
+            <p><span style="color: #3399FF;">Nhà sản xuất:</span> {{pro.product.MANUFACTURE_ID}}</p>
+            <p><span style="color: #3399FF;">Mã sản phẩm:</span> {{pro.product.MODEL_ID}}</p>
+            <p style="color: red;"><span style="color: #3399FF;">Tình trạng:</span> {{pro.product.QUANTITY}}</p>
         </div>
         <div class="row top_border" style="padding: 10px 0px;">
             <!-- <b style="color: red;">Giá: @Model.Product.PRICE VND (Đã có VAT)</b> -->
-            <b style="color: red;">Giá: {{Price}} VND (Đã có VAT)</b>
+            <b style="color: red;">Giá: {{pro.product.PRICE}} VND (Đã có VAT)</b>
         </div>
         <!-- @if(@Model.Product.QUANTITY > 0)
         {
@@ -72,15 +72,15 @@
                             <td>@attr.ATTRIBUTE_VALUE</td>
                         </tr>
                     } -->
-                    <tr ng-repeat="x in Attr">
-                        <td>{{x.Name}}</td>
-                        <td>{{x.Value}}</td>
+                    <tr ng-repeat="x in pro.attribute">
+                        <td>{{x.ATTRIBUTE_NAME}}</td>
+                        <td>{{x.ATTRIBUTE_VALUE}}</td>
                     </tr>                    
                 </table>
             </div>
         </div>
         <div id="view2">
-            {{Description}}
+            {{pro.product.DESCRIPTION }}
         </div>
         <div id="view3">
             <div class="block row">

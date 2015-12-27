@@ -1,5 +1,5 @@
 'use strict';
-mobileStoreApp.controller('signupController', ['$scope', '$location', '$timeout', 'authService', function ($scope, $location, $timeout, authService) {
+mobileStoreApp.controller('SignUpController', ['$scope', '$location', '$timeout', 'authService', function ($scope, $location, $timeout, authService) {
  
     $scope.savedSuccessfully = false;
     $scope.message = "";
