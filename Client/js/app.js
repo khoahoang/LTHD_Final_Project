@@ -1,5 +1,6 @@
 var mobileStoreApp = angular.module('mobileStoreApp', ['ngRoute', 'LocalStorageModule', 'angular-loading-bar']);
 
+
 mobileStoreApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
@@ -59,3 +60,13 @@ mobileStoreApp.run(['authService', function (authService) {
 mobileStoreApp.config(function ($httpProvider) {
     $httpProvider.interceptors.push('authInterceptorService');
 });
+
+mobileStoreApp.controller('index', function($scope, localStorageService){
+	var items = localStorageService.get('dataShopping');
+	var n = 0;
+	for (var i = 0; i < items.length; i++){
+		n += items[i].Quantity;
+	}
+
+	$scope.Count = n;
+})

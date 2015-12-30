@@ -39,6 +39,9 @@
             Số lượng
         </th>
         <th>
+            Tong
+        </th>
+        <th>
             Chỉnh sửa
         </th>
     </tr>
@@ -58,6 +61,9 @@
             <!--@item.COUNT-->
         </td>
         <td>
+            {{ x.Total }}
+        </td>
+        <td>
             <button ng-click="TangSoLuong(x.ID)">  +  </button>
             <button ng-click="GiamSoLuong(x.ID)">  -  </button>
             <!-- <a href="#" class="RemoveLink" data-id="1" style="float:left; text-decoration:none">
@@ -66,6 +72,11 @@
             <!--<a href="#" class="RemoveLink" data-id="@item.RECORD_ID" style="float:left; text-decoration:none">
                 ( - )
             </a>-->
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4" style="text-align: right">
+            Tong cong: {{All}}
         </td>
     </tr>
 
