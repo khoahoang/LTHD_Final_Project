@@ -33,14 +33,14 @@
         <div class="cat-content bottom_border">
             <!-- @foreach(PRODUCT product in @item.ListProducts)
             { -->
-            <div ng-repeat="y in x.listProduct">
+            <div ng-repeat="y in x.ListProduct">
                 <div class="product">
                     <!-- <img src="@product.PRODUCT_IMG" alt=""> -->
-                    <img src="{{y.PRODUCT_IMG}}" alt="">
+                    <img src="{{y.Image}}" alt="">
                     <!-- <a href="@Url.Action("Index", "ProductDetail", new { idProduct = @product.PRODUCT_ID })"> -->
-                    <a href="index.html#/productdetail/{{y.PRODUCT_ID}}">
-                    <p class="product-name"><!-- @product.MODEL -->{{y.MODEL}}</p></a>
-                    <p class="price"><!-- @product.PRICE -->{{y.PRICE}}</p>
+                    <a href="index.html#/productdetail/{{y.ID}}">
+                    <p class="product-name"><!-- @product.MODEL -->{{y.Name}}</p></a>
+                    <p class="price"><!-- @product.PRICE -->{{y.Price}}</p>
                 </div>
             </div>
         </div>

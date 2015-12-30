@@ -35,6 +35,8 @@ namespace MobileSt.Controllers
                            where e.PRODUCT_ID == id
                            select e).FirstOrDefault();
 
+                ProductDetail.Price = String.Format("{0:0,0}", ProductDetail.product.PRICE);
+
                 MANUFACTURE m = list.SingleOrDefault(x => x.MANUFACTURE_ID == ProductDetail.product.MANUFACTURE_ID);
                 ProductDetail.NSX = m.MANUFACTURE_NAME;
 

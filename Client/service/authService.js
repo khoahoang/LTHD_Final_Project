@@ -62,12 +62,22 @@ mobileStoreApp.factory('authService', ['$http', '$q', 'localStorageService', fun
         }
  
     }
+
+    var _setDataShopping = function() {
+        var items = localStorageService.get('dataShopping');
+        if (!items)
+        {
+            var items = [];
+            localStorageService.set('dataShopping', items);
+        }
+    }
  
     authServiceFactory.saveRegistration = _saveRegistration;
     authServiceFactory.login = _login;
     authServiceFactory.logOut = _logOut;
     authServiceFactory.fillAuthData = _fillAuthData;
     authServiceFactory.authentication = _authentication;
+    authServiceFactory.setDataShopping = _setDataShopping;
  
     return authServiceFactory;
 }]);

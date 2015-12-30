@@ -29,20 +29,17 @@
         </div>
         <div class="row top_border" style="padding: 10px 0px;">
             <!-- <b style="color: red;">Giá: @Model.Product.PRICE VND (Đã có VAT)</b> -->
-            <b style="color: red;">Giá: {{pro.product.PRICE}} VND (Đã có VAT)</b>
+            <b style="color: red;">Giá: {{pro.Price}} VND (Đã có VAT)</b>
         </div>
-        <p class="button">
-            Thêm vào giỏ hàng
-        </p> 
         <!-- @if(@Model.Product.QUANTITY > 0)
         {
             <p class="button">
                 @Html.ActionLink("Thêm vào giỏ hàng", "AddToCart", "ShoppingCart", new { id = Model.Product.PRODUCT_ID }, "")
             </p>            
-        } -->??
+        } -->
 
         <p class="button">
-            <a href="#">Thêm vào giỏ hàng</a>
+            <a href="index.html#/addproduct/{{pro.product.PRODUCT_ID}}">Thêm vào giỏ hàng</a>
         </p>  
          
         <div class="row top_bottom_border" style="padding: 10px 0px;">

@@ -12,17 +12,17 @@
 </div>
 <div class="categories container">
     <div class="title row">
-        <h1></h1>
+        <h1>{{Category}}</h1>
     </div>
     <div class="content row">
         <p></p>
         <div ng-repeat="x in pro">
             <div class="product">
-                <img src="./{{x.PRODUCT_IMG}}" alt="hinh anh">
-                    <a href="index.html#/productdetail/{{x.PRODUCT_ID}}">
-                        <p class="product-name">{{x.MODEL}}</p>
+                <img src="./{{x.Image}}" alt="hinh anh">
+                    <a href="index.html#/productdetail/{{x.ID}}">
+                        <p class="product-name">{{x.Name}}</p>
                     </a>
-                <p class="price">{{x.PRICE}}</p>
+                <p class="price">{{x.Price}}</p>
             </div>
         </div>
     </div>

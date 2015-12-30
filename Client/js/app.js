@@ -23,7 +23,12 @@ mobileStoreApp.config(['$routeProvider',
 
 		when('/shoppingcart', {
 		templateUrl: 'template/user/shoppingcart.html',
-		controller: 'OrdersController'
+		controller: 'ShoppingCartController'
+		}).
+
+		when('/addproduct/:proId', {
+		templateUrl: 'template/user/shoppingcart.html',
+		controller: 'AddProductToShoppingCartController'
 		}).
 
 		when('/productdetail/:proId', {
@@ -48,6 +53,7 @@ mobileStoreApp.config(['$routeProvider',
 
 mobileStoreApp.run(['authService', function (authService) {
     authService.fillAuthData();
+    authService.setDataShopping();
 }]);
 
 mobileStoreApp.config(function ($httpProvider) {

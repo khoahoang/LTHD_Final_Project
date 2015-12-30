@@ -38,11 +38,27 @@ namespace MobileSt.Controllers
                 foreach (var item in lst_cat)
                 {
                     ProductofCategory temp = new ProductofCategory();
-                    temp.category = item; int cat_id = temp.category.CATEGORY_ID;
-                    temp.listProduct = (from e in data.PRODUCTs
+                    temp.category = item; 
+                    int cat_id = temp.category.CATEGORY_ID;
+
+                    List<PRODUCT> listProduct = new List<PRODUCT>();
+                    listProduct = (from e in data.PRODUCTs
                                         join f in data.PRODUCT_CATEGORY on e.PRODUCT_ID equals f.PRODUCT_ID
                                         where f.CATEGORY_ID == cat_id
                                         select e).Take(5).ToList();
+
+                    foreach (var item2 in listProduct)
+                    {
+                        ProductSModel s = new ProductSModel();
+                        s.ID = item2.PRODUCT_ID;
+                        s.Image = item2.PRODUCT_IMG;
+                        s.Name = item2.MODEL;
+                        s.Price = String.Format("{0: 0,0}", item2.PRICE);
+                        s.Category = temp.category.CATEGORY_NAME;
+
+                        temp.ListProduct.Add(s);
+                    }
+
                     pc.Add(temp);
                 }
             }
@@ -50,6 +66,4 @@ namespace MobileSt.Controllers
             return CreateResponse(HttpStatusCode.OK, pc);
         }
     }
-
-
 }

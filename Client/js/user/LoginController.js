@@ -12,7 +12,7 @@ mobileStoreApp.controller('LoginController', ['$scope', '$location', 'authServic
  
         authService.login($scope.loginData).then(function (response) {
  
-            $location.path('/orders');
+            $location.path('/home');
  
         },
          function (err) {

@@ -1,4 +1,4 @@
-<script src="/Scripts/jquery-1.11.3.min.js" type="text/javascript"></script>
+<!--<script src="/Scripts/jquery-1.11.3.min.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(function () {
         // Document.ready -> link up remove event handler
@@ -24,7 +24,7 @@
             }
         });
     });
-</script>
+</script>-->
 <h2>Giỏ hàng của tui</h2>
 <div id="update-message"> </div>
 <table>
@@ -43,24 +43,26 @@
         </th>
     </tr>
 
-    <tr ng-repeat="x in orders">
+    <tr ng-repeat="x in listProduct">
         <td>
-            <a href="#">{{x.orderID }}</a>
+            <a href="index.html#/productdetail/{{x.ID}}">{{ x.ModelProduct }}</a>
             <!--@Html.ActionLink(item.PRODUCT.MODEL, "Index", "ProductDetail", new { id = item.PRODUCT_ID }, null)-->
         </td>
         <td>
-            {{x.customerName }}
+            {{ x.Price }}
             <!--@item.PRODUCT.PRICE-->
         </td>
         <!--<td id="item-count-@item.RECORD_ID">-->
-        <td id="1">
-            {{x.shipperCity }}
+        <td>
+            {{ x.Quantity }}
             <!--@item.COUNT-->
         </td>
         <td>
-            <a href="#" class="RemoveLink" data-id="1" style="float:left; text-decoration:none">
+            <button ng-click="TangSoLuong(x.ID)">  +  </button>
+            <button ng-click="GiamSoLuong(x.ID)">  -  </button>
+            <!-- <a href="#" class="RemoveLink" data-id="1" style="float:left; text-decoration:none">
                 ( - )
-            </a>
+            </a> -->
             <!--<a href="#" class="RemoveLink" data-id="@item.RECORD_ID" style="float:left; text-decoration:none">
                 ( - )
             </a>-->
@@ -97,6 +99,7 @@
         <td></td>
     </tr>-->
 </table>
+<br/>
 <p class="button">
     <a href="#">Đặt hàng</a>
     <!--@Html.ActionLink("Đặt hàng", "AddressAndOrder", "Order")-->
