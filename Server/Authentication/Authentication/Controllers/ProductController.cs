@@ -48,6 +48,7 @@ namespace MobileSt.Controllers
                                                where e.PRODUCT_ID == id
                                                select e).ToList();
             }
+            
             string json = JsonConvert.SerializeObject(ProductDetail);
             return CreateResponse(HttpStatusCode.OK, ProductDetail);
         }
