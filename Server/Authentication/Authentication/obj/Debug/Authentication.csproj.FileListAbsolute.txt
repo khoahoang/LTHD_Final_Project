@@ -38,3 +38,43 @@ c:\users\yourself\documents\visual studio 2013\Projects\Authentication\Authentic
 c:\users\yourself\documents\visual studio 2013\Projects\Authentication\Authentication\bin\Microsoft.Owin.Cors.dll
 c:\users\yourself\documents\visual studio 2013\Projects\Authentication\Authentication\bin\System.Web.Cors.dll
 c:\users\yourself\documents\visual studio 2013\Projects\Authentication\Authentication\bin\Microsoft.Owin.Cors.xml
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Authentication.dll.config
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Authentication.dll
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Authentication.pdb
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\EntityFramework.dll
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\EntityFramework.SqlServer.dll
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Microsoft.AspNet.Identity.Core.dll
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Microsoft.Owin.Cors.dll
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Microsoft.Owin.dll
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Microsoft.Owin.Security.Cookies.dll
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Microsoft.Owin.Security.dll
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Microsoft.Owin.Security.OAuth.dll
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Newtonsoft.Json.dll
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Owin.dll
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\System.Net.Http.Formatting.dll
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\System.Web.Cors.dll
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\System.Web.Http.dll
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\System.Web.Http.Owin.dll
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\System.Web.Http.WebHost.dll
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\EntityFramework.xml
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\EntityFramework.SqlServer.xml
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Microsoft.AspNet.Identity.Core.xml
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Microsoft.Owin.xml
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Microsoft.Owin.Cors.xml
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Microsoft.Owin.Security.xml
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Microsoft.Owin.Security.Cookies.xml
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Microsoft.Owin.Security.OAuth.xml
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\System.Web.Http.Owin.xml
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Newtonsoft.Json.xml
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\System.Net.Http.Formatting.xml
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\System.Web.Http.xml
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\System.Web.Http.WebHost.xml
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\obj\Debug\Authentication.csprojResolveAssemblyReference.cache
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\obj\Debug\Authentication.dll
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\obj\Debug\Authentication.pdb

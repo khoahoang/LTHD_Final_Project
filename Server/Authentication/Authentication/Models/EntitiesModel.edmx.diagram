@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="81d7351071cc4a0593025727b03f1cf2" Name="Diagram1">
+      <Diagram DiagramId="6291f44b94ac46d5beefdb57f7764cf5" Name="Diagram1">
         <EntityTypeShape EntityType="MobileStoreServiceModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MobileStoreServiceModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="MobileStoreServiceModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
@@ -24,9 +24,9 @@
         <EntityTypeShape EntityType="MobileStoreServiceModel.PRODUCT_DESCRIPTION" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MobileStoreServiceModel.ROLE" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MobileStoreServiceModel.AspNetOrder" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector ManuallyRouted="false" Association="MobileStoreServiceModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
-        <AssociationConnector ManuallyRouted="false" Association="MobileStoreServiceModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
-        <AssociationConnector ManuallyRouted="false" Association="MobileStoreServiceModel.AspNetUserRoles" />
+        <AssociationConnector Association="MobileStoreServiceModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileStoreServiceModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileStoreServiceModel.AspNetUserRoles" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

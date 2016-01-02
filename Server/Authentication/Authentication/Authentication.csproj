@@ -204,7 +204,9 @@
     <Compile Include="Models\PRODUCT.cs">
       <DependentUpon>EntitiesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductDetailModel.cs" />
     <Compile Include="Models\ProductofCategory.cs" />
+    <Compile Include="Models\ProductSModel.cs" />
     <Compile Include="Models\PRODUCT_ATTRIBUTE.cs">
       <DependentUpon>EntitiesModel.tt</DependentUpon>
     </Compile>
