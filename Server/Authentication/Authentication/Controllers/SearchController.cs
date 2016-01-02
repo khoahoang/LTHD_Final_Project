@@ -19,8 +19,14 @@ namespace Authentication.Controllers
 
             MobileStoreServiceEntities sv = new MobileStoreServiceEntities();
             List<PRODUCT> lstProduct = sv.PRODUCTs.Where(x => x.MODEL.Contains(keyword)).ToList();
+            int totalPages = lstProduct.Count/pageSize + 1;
 
-            return CreateResponse(HttpStatusCode.OK, lstProduct.ToPagedList(pageNumber, pageSize));
+            var result = new
+            {
+                TotalPages = totalPages,
+                Products = lstProduct.ToPagedList(pageNumber, pageSize)
+            };
+            return CreateResponse(HttpStatusCode.OK, result);
         }
         [HttpGet]
         public HttpResponseMessage SearchPage(string keyword)
