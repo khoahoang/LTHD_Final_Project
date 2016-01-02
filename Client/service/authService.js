@@ -69,6 +69,7 @@ mobileStoreApp.factory('authService', ['$http', '$q', 'localStorageService', fun
         {
             var items = [];
             localStorageService.set('dataShopping', items);
+            localStorageService.set('SoLuong', 0);
         }
     }
  

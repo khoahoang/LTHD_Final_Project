@@ -1,4 +1,4 @@
-var mobileStoreApp = angular.module('mobileStoreApp', ['ngRoute', 'LocalStorageModule', 'angular-loading-bar']);
+var mobileStoreApp = angular.module('mobileStoreApp', ['ngRoute', 'LocalStorageModule', 'angular-loading-bar', 'ui.bootstrap']);
 
 
 mobileStoreApp.config(['$routeProvider',
@@ -47,6 +47,11 @@ mobileStoreApp.config(['$routeProvider',
 		controller: 'SignUpController'
 		}).
 
+		when('/search/:str', {
+		templateUrl: 'template/user/search.html',
+		controller: 'SearchController'
+		}).
+
 		otherwise({
 		redirectTo: '/home'
 		});
@@ -62,11 +67,5 @@ mobileStoreApp.config(function ($httpProvider) {
 });
 
 mobileStoreApp.controller('index', function($scope, localStorageService){
-	var items = localStorageService.get('dataShopping');
-	var n = 0;
-	for (var i = 0; i < items.length; i++){
-		n += items[i].Quantity;
-	}
-
-	$scope.Count = n;
+	$scope.Count = localStorageService.get('SoLuong');
 })

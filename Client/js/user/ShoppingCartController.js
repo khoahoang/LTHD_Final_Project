@@ -1,23 +1,23 @@
 'use strict';
 mobileStoreApp.controller('ShoppingCartController', ['$scope', 'localStorageService', function ($scope, localStorageService) {
 	var list = localStorageService.get('dataShopping');
+  var count = localStorageService.get('SoLuong');
+
 	$scope.listProduct = list;
 
   var all = 0;
   for (var index = 0; index < list.length; index++){
     all = list[index].PriceDouble*list[index].Quantity + all;
   }
-  var formater = numeral(all);
-  $scope.All = formater.format('0,0');
+
+  $scope.All = all;
 
 	$scope.TangSoLuong = function(id){
     for  (var index = 0; index < list.length; index++) {
       if (list[index].ID == id){
         list[index].Quantity++;
         list[index].Total = list[index].PriceDouble * list[index].Quantity;
-
-        var f = numeral(list[index].Total);
-        list[index].Total = f.format('0,0');
+        count++;
         break;
       }
     }
@@ -29,8 +29,9 @@ mobileStoreApp.controller('ShoppingCartController', ['$scope', 'localStorageServ
     for (var index = 0; index < list.length; index++){
       all = list[index].PriceDouble*list[index].Quantity + all;
     }
-    var formater = numeral(all);
-    scope.All = formater.format('0,0');
+    
+    $scope.All = all;
+    var count = localStorageService.set('SoLuong', count);
   };
 
   $scope.GiamSoLuong = function(id){
@@ -39,15 +40,20 @@ mobileStoreApp.controller('ShoppingCartController', ['$scope', 'localStorageServ
         if (list[index].Quantity > 1){
           list[index].Quantity--;
           list[index].Total = list[index].PriceDouble * list[index].Quantity;
-          var f = numeral(list[index].Total);
-          list[index].Total = f.format('0,0');
           break;
         }
         else{
           list.splice(index, 1);
           break;
         }
+        count--;
       }
+      var count = 0;
+  for (var index = 0; index < list.length; index++){
+      count=list[index].Quantity + count;
+    }
+
+    localStorageService.set('SoLuong', count);
     }
 
     localStorageService.set('dataShopping', list);
@@ -57,8 +63,9 @@ mobileStoreApp.controller('ShoppingCartController', ['$scope', 'localStorageServ
     for (var index = 0; index < list.length; index++){
       all=list[index].PriceDouble*list[index].Quantity + all;
     }
-    var formater = numeral(all);
-    $scope.All = formater.format('0,0');
+
+    $scope.All = all;
+    var count = localStorageService.set('SoLuong', count);
   };
     
 

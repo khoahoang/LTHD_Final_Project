@@ -9,7 +9,6 @@ namespace Authentication.Models
     {
         public string NSX { get; set; }
         public PRODUCT product { get; set; }
-        public string Price { get; set; }
         public string Status 
         {
             get

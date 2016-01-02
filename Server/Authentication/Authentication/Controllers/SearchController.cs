@@ -28,6 +28,7 @@ namespace Authentication.Controllers
             };
             return CreateResponse(HttpStatusCode.OK, result);
         }
+
         [HttpGet]
         public HttpResponseMessage SearchPage(string keyword)
         {

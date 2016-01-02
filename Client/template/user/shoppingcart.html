@@ -52,7 +52,7 @@
             <!--@Html.ActionLink(item.PRODUCT.MODEL, "Index", "ProductDetail", new { id = item.PRODUCT_ID }, null)-->
         </td>
         <td>
-            {{ x.Price }}
+            {{ x.PriceDouble | number }}
             <!--@item.PRODUCT.PRICE-->
         </td>
         <!--<td id="item-count-@item.RECORD_ID">-->
@@ -61,7 +61,7 @@
             <!--@item.COUNT-->
         </td>
         <td>
-            {{ x.Total }}
+            {{ x.Total | number }}
         </td>
         <td>
             <button ng-click="TangSoLuong(x.ID)">  +  </button>
@@ -76,7 +76,7 @@
     </tr>
     <tr>
         <td colspan="4" style="text-align: right">
-            Tong cong: {{All}}
+            Tong cong: {{All | number}}
         </td>
     </tr>
 

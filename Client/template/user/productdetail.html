@@ -29,7 +29,7 @@
         </div>
         <div class="row top_border" style="padding: 10px 0px;">
             <!-- <b style="color: red;">Giá: @Model.Product.PRICE VND (Đã có VAT)</b> -->
-            <b style="color: red;">Giá: {{pro.Price}} VND (Đã có VAT)</b>
+            <b style="color: red;">Giá: {{pro.product.PRICE | number}} VND (Đã có VAT)</b>
         </div>
         <!-- @if(@Model.Product.QUANTITY > 0)
         {

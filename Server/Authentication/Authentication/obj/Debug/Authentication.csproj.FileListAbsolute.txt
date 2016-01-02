@@ -78,3 +78,5 @@ E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\Syste
 E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\obj\Debug\Authentication.csprojResolveAssemblyReference.cache
 E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\obj\Debug\Authentication.dll
 E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\obj\Debug\Authentication.pdb
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\PagedList.xml
+E:\LTHD-Client\LTHD_Final_Project\Server\Authentication\Authentication\bin\PagedList.Mvc.xml
