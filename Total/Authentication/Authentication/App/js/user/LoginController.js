@@ -53,7 +53,7 @@ mobileStoreApp.controller('LoginController', ['$scope', '$location', 'authServic
                 var externalData = { provider: fragment.provider, externalAccessToken: fragment.external_access_token };
                 authService.obtainAccessToken(externalData).then(function (response) {
 
-                    $location.path('/orders');
+                    $location.path('/home');
 
                 },
              function (err) {

@@ -21,6 +21,7 @@
     <script type="text/javascript" src="app/lib/angular/angular-route.js"></script>
     <script type="text/javascript" src="app/script/angularjs-local-storage.min.js"></script>
     <script type="text/javascript" src="app/script/loading-bar.min.js"></script>
+    <script type="text/javascript" src="app/lib/bootstrap/js/ui-bootstrap-tpls-0.14.3.min.js"></script>
 
     <!-- Add main app -->
     <script type="text/javascript" src="app/js/app.js"></script>
@@ -29,6 +30,7 @@
     <script src="app/service/authInterceptorService.js"></script>
     <script src="app/service/authService.js"></script>
     <script src="app/service/ordersService.js"></script>
+    <script src="app/service/shoppingService.js"></script>
 
     <!-- Add controller -->
     <script type="text/javascript" src="app/js/user/HomeController.js"></script>
@@ -40,12 +42,14 @@
     <script type="text/javascript" src="app/js/user/IndexController.js"></script>
     <script type="text/javascript" src="app/js/user/OrdersController.js"></script>
     <script type="text/javascript" src="app/js/user/AddProductToShoppingCartController.js"></script>
+    <script type="text/javascript" src="app/js/user/SearchController.js"></script>
     <script type="text/javascript" src="app/js/user/AssociateController.js"></script>
+    <script type="text/javascript" src="app/js/user/index.js"></script>
     
 
 </head>
-<body ng-app="mobileStoreApp" ng-controller="index">
-    <div class="header">
+<body ng-app="mobileStoreApp">
+    <div class="header" ng-controller="IndexController">
         <div class="main-header">
             <div class="container">
                 <div class="row">
@@ -55,9 +59,9 @@
                     <div class="search-bar col-md-4 col-md-offset-1">
                         <div class="row">
                             <div class="input-group">
-                                <input type="text" name="search" class="form-control" value="" placeholder="Tìm..." />
+                                <input type="text" id="SearchBox" name="search" class="form-control" value="" placeholder="Tìm..." />
                                 <span class="input-group-btn">
-                                    <input type="submit" value="Tìm kiếm" class="btn btn-default search-button" />
+                                    <input type="submit" onclick="Search()" value="Tìm kiếm" class="btn btn-default search-button" />
                                 </span>
                             </div><!-- /input-group -->
                         </div><!-- /.row -->
@@ -68,7 +72,7 @@
                                 <img width="25px" src="app/img/giohang.jpg" />
                             </div>
                             <b class="col-md-6 cart-status"><a href="index.html#/shoppingcart">Giỏ hàng của bạn: </a>
-                                <span id="ProductInCart">{{Count}}
+                                <span id="ProductInCart">{{count}}
                                     <!--*@if(@Session["ProductInCart"] != null)
                                 {
                                      @Session["ProductInCart"].ToString();
@@ -89,9 +93,11 @@
                                     <span> | </span>
                                     @Html.ActionLink("Đăng nhập", "Login", "Account")
                                 }-->
-                                <a href="index.html#/signup">Đăng kí</a>
+                                   <a ng-hide="!authentication.isAuth" href="#">Welcome {{authentication.userName}}</a>
+                                   <a ng-hide="authentication.isAuth" href="index.html#/signup">Đăng kí</a>
                                     <span> | </span>
-                                <a href="index.html#/login">Đăng nhập</a>
+                                   <a ng-hide="authentication.isAuth" href="index.html#/login">Đăng nhập</a>
+                                   <a ng-hide="!authentication.isAuth" href="#" ng-click="logOut()">Đăng xuất</a>
                                 </b>
                             </div>
                         </div>                        
@@ -115,7 +121,8 @@
         </div>
     </div>
     <div class="container content">
-        <div ng-view></div>
+        <div ng-view>
+        </div>
     </div>
     <div class="footer">
         <div class="container" style="text-align: center;">
@@ -128,5 +135,12 @@
     $(window).load(function () {
         $('#slider').nivoSlider();
     });
+
+    function Search() {
+        var str = document.getElementById("SearchBox").value;
+        if (str != "") {
+            location.assign('index.html#/search/' + str);
+        }
+    }
 </script>
 </html>

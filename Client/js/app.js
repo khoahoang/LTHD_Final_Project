@@ -18,7 +18,7 @@ mobileStoreApp.config(['$routeProvider',
 		}).
 
 		when('/showproductbycategory/:catId', {
-		templateUrl: 'template/user/showproductbycategory.html',
+		templateUrl: 'template/user/showproductbycategory.html',//sao xoa app/ het roi ko phai xoa', cai' moi cua ong co' app do'
 		controller: 'ShowProductByCategoryController'
 		}).
 
@@ -56,6 +56,12 @@ mobileStoreApp.config(['$routeProvider',
 		redirectTo: '/home'
 		});
   }]);
+var serviceBase = 'http://localhost:41127/';
+//var serviceBase = 'http://ngauthenticationapi.azurewebsites.net/';
+mobileStoreApp.constant('ngAuthSettings', {
+    apiServiceBaseUri: serviceBase,
+    clientId: 'ngAuthApp'
+});
 
 mobileStoreApp.run(['authService', function (authService) {
     authService.fillAuthData();

@@ -32,10 +32,8 @@ namespace MobileSt.Controllers
                 List<MANUFACTURE> list = data.MANUFACTUREs.ToList();
 
                 ProductDetail.product = (from e in data.PRODUCTs
-                           where e.PRODUCT_ID == id
-                           select e).FirstOrDefault();
-
-                ProductDetail.Price = String.Format("{0:0,0}", ProductDetail.product.PRICE);
+                                         where e.PRODUCT_ID == id
+                                         select e).FirstOrDefault();
 
                 MANUFACTURE m = list.SingleOrDefault(x => x.MANUFACTURE_ID == ProductDetail.product.MANUFACTURE_ID);
                 ProductDetail.NSX = m.MANUFACTURE_NAME;
@@ -44,10 +42,11 @@ namespace MobileSt.Controllers
                                              where e.PRODUCT_ID == id
                                              select e).FirstOrDefault();
 
-                ProductDetail.attribute = (from e in data.ATTRIBUTEs                                           
-                                               where e.PRODUCT_ID == id
-                                               select e).ToList();
+                ProductDetail.attribute = (from e in data.ATTRIBUTEs
+                                           where e.PRODUCT_ID == id
+                                           select e).ToList();
             }
+
             string json = JsonConvert.SerializeObject(ProductDetail);
             return CreateResponse(HttpStatusCode.OK, ProductDetail);
         }

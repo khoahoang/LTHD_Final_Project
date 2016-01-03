@@ -1,99 +1,43 @@
-mobileStoreApp.controller('AddProductToShoppingCartController', function ($scope, localStorageService, $routeParams, $http) {
-  var list = localStorageService.get('dataShopping');
+mobileStoreApp.controller('AddProductToShoppingCartController', function ($scope, shoppingService, $routeParams, $http) {
+    var list = shoppingService.get();
 
-  $http.get("http://localhost:41127/api/product/getproduct?id=" + $routeParams.proId)
-  .then(function(response) {
-    var pro = response.data;
+    $http.get("http://localhost:41127/api/product/getproduct?id=" + $routeParams.proId)
+    .then(function (response) {
+        list = shoppingService.them(response.data);
 
-    var proID = pro.product.PRODUCT_ID;
-    var modelProduct = pro.product.MODEL;
-    var priceDouble = pro.product.PRICE;
-    var price = pro.Price;
-    var quantity = 1;
-    var total = (numeral(priceDouble)).format('0,0');
+        shoppingService.set(list);
 
-    var flag = false;
-    for	(var index = 0; index < list.length; index++) {
-  		if (list[index].ID == proID){
-  			list[index].Quantity++;
-        list[index].Total = list[index].PriceDouble * list[index].Quantity;
+        $scope.listProduct = list;
 
-        var f = numeral(list[index].Total);
-        list[index].Total = f.format('0,0');
-  			flag = true;
-  		}
-    }
+        $scope.All = shoppingService.getAll();
+    });
 
-    if (flag == false){
-      var item = {"ID": proID, "ModelProduct": modelProduct, "PriceDouble": priceDouble, "Price": price, "Quantity": quantity, "Total": total};
-      list.push(item);
-    }
+    $scope.TangSoLuong = function (id) {
+        var list = shoppingService.tang(id);
 
-    localStorageService.set('dataShopping', list);
+        shoppingService.set(list);
 
-    $scope.listProduct = list;
+        $scope.listProduct = list;
 
-    var all = 0;
-    for (var index = 0; index < list.length; index++){
-      all=list[index].PriceDouble*list[index].Quantity + all;
-    }
+        $scope.All = shoppingService.getAll();
+    };
 
-    $scope.All = (numeral(all)).format('0,0');
-  });
+    $scope.GiamSoLuong = function (id) {
+        var list = shoppingService.giam(id);
 
-  $scope.TangSoLuong = function(id){
-    for  (var index = 0; index < list.length; index++) {
-      if (list[index].ID == id){
-        list[index].Quantity++;
-        list[index].Total = list[index].PriceDouble * list[index].Quantity;
+        shoppingService.set(list);
 
-        var f = numeral(list[index].Total);
-        list[index].Total = f.format('0,0');
-        break;
-      }
-    }
+        $scope.listProduct = list;
 
-    localStorageService.set('dataShopping', list);
+        $scope.All = shoppingService.getAll();
+    };
 
-    $scope.listProduct = list;
+    // var count = 0;
+    // for (var index = 0; index < list.length; index++){
+    //     count=list[index].Quantity + count;
+    //   }
 
-    var all = 0;
-    for (var index = 0; index < list.length; index++){
-      all=list[index].PriceDouble*list[index].Quantity + all;
-    }
-
-    $scope.All = (numeral(all)).format('0,0');
-  };
-
-  $scope.GiamSoLuong = function(id){
-    for  (var index = 0; index < list.length; index++) {
-      if (list[index].ID == id){
-        if (list[index].Quantity > 1){
-          list[index].Quantity--;
-          list[index].Total = list[index].PriceDouble * list[index].Quantity;
-
-          var f = numeral(list[index].Total);
-          list[index].Total = f.format('0,0');
-          break;
-        }
-        else{
-          list.splice(index, 1);
-          break;
-        }
-      }
-    }
-
-    localStorageService.set('dataShopping', list);
-
-    $scope.listProduct = list;
-
-    var all = 0;
-    for (var index = 0; index < list.length; index++){
-      all=list[index].PriceDouble*list[index].Quantity + all;
-    }
-
-    $scope.All = (numeral(all)).format('0,0');
-  };
+    //   $rootScope.SoLuong = count;
 })
 
 // mobileStoreApp.controller('AddProductToShoppingCartController', 

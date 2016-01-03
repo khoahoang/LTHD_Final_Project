@@ -1,19 +1,11 @@
-<!-- @model PagedList.IPagedList<MobileStore.Models.PRODUCT>
-@using PagedList.Mvc;
-<link href="~/Content/css/PagedList.css" rel="stylesheet" type="text/css" />
-
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Kết quả tìm kiếm";
-} -->
 <div class="banner">
     <div id="wrapper">
         <div class="slider-wrapper theme-default">
             <div id="slider" class="nivoSlider">
-                <img src="@Url.Content("app/img/slider/tablet.jpg")" data-thumb="" alt="" title="Tablet" />
-                <img src="@Url.Content("app/img/slider/acer1.jpg")" data-thumb="" alt="" title="Acer laptop" />
-                <img src="@Url.Content("app/img/slider/geforce.jpg")" data-thumb="" alt="" title="Geforce" data-transition="slideInLeft" />
-                <img src="@Url.Content("app/img/slider/asus2.jpg")" data-thumb="" alt="" title="Asus" />
+                <img src="app/img/slider/tablet.jpg" data-thumb="" alt="" title="Tablet" />
+                <img src="app/img/slider/acer1.jpg" data-thumb="" alt="" title="Acer laptop" />
+                <img src="app/img/slider/geforce.jpg" data-thumb="" alt="" title="Geforce" data-transition="slideInLeft" />
+                <img src="app/img/slider/asus2.jpg" data-thumb="" alt="" title="Asus" />
             </div>
         </div>
     </div>
@@ -23,13 +15,27 @@
 <div class="cat-content bottom_border">
     <div class="title row">
         <!-- <h1>Kết quả tìm kiếm @ViewBag.SearchName</h1> -->
-        <h1>Kết quả tìm kiếm {{SearchName}}</h1>
+        <h1>Kết quả tìm kiếm "{{SearchName}}"</h1>
+        <br>
+        Sắp xếp
+        <select ng-model="orderList">
+            <option value="MODEL">A-Z</option>
+            <option value="-MODEL">Z-A</option>
+            <option value="PRICE">Rẻ nhất</option>
+            <option value="-PRICE">Đắt nhất</option>
+        </select>
     </div>
     <div class="content row">
         <!-- <p>@ViewBag.Message</p> -->
         <p>{{Message}}</p>
-        
-        
+
+        <div class="product" ng-repeat="x in pro.Products | orderBy : orderList">
+            <img src="{{x.PRODUCT_IMG}}" alt="hinh anh">
+            <a href="index.html#/productdetail/{{x.PRODUCT_ID}}">
+                <p class="product-name">{{x.MODEL}}</p>
+            </a>
+            <p class="price">{{x.PRICE | number}}</p>
+        </div>
         <!-- @foreach (var item in Model)
         {
             <div class="product">
@@ -42,8 +48,5 @@
         } -->
     </div>
 </div>
-<!-- Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
-@Html.PagedListPager(Model, page => Url.Action("Index", new { search = ViewBag.SearchName, page })) -->
 
-
-
+<uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></uib-pagination>
