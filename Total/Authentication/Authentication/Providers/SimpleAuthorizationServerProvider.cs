@@ -106,6 +106,8 @@ namespace Authentication.Providers
             if (allowedOrigin == null) allowedOrigin = "*";
 
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { allowedOrigin });
+
+            string role = "member";
             using (AuthRepository _repo = new AuthRepository())
             {
                 IdentityUser user = await _repo.FindUser(context.UserName, context.Password);
@@ -115,12 +117,14 @@ namespace Authentication.Providers
                     context.SetError("invalid_grant", "The user name or password is incorrect.");
                     return;
                 }
+                if (user.Roles != null && user.Roles.Count > 0 && user.Roles.First().RoleId == "1")
+                    role = "Admin";
             }
             
             var identity = new ClaimsIdentity(context.Options.AuthenticationType);
             identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
             identity.AddClaim(new Claim("sub", context.UserName));
-            identity.AddClaim(new Claim("role", "user"));
+            identity.AddClaim(new Claim(ClaimTypes.Role, role));
 
             var props = new AuthenticationProperties(new Dictionary<string, string>
                 {
@@ -129,6 +133,9 @@ namespace Authentication.Providers
                     },
                     { 
                         "userName", context.UserName
+                    },
+                    {
+                        "role", role
                     }
                 });
 

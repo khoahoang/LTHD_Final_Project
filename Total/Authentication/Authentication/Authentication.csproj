@@ -169,6 +169,7 @@
     <Content Include="App\img\v_line.jpg" />
     <Content Include="App\js\app.js" />
     <Content Include="App\js\user\AddProductToShoppingCartController.js" />
+    <Content Include="App\js\user\AssociateController.js" />
     <Content Include="App\js\user\HomeController.js" />
     <Content Include="App\js\user\IndexController.js" />
     <Content Include="App\js\user\LoginController.js" />
@@ -210,6 +211,7 @@
     <Content Include="App\service\authService.js" />
     <Content Include="App\service\ordersService.js" />
     <Content Include="App\template\user\about.html" />
+    <Content Include="App\template\user\associate.html" />
     <Content Include="App\template\user\contact.html" />
     <Content Include="App\template\user\home.html" />
     <Content Include="App\template\user\login.html" />
@@ -220,6 +222,7 @@
     <Content Include="App\template\user\signup.html" />
     <Content Include="authComplete.html" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="index-admin.html" />
     <Content Include="index.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -233,6 +236,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\ProductAdminController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RefreshTokensController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
@@ -284,6 +288,7 @@
     <Compile Include="Models\PRODUCT.cs">
       <DependentUpon>EntitiesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductAdminViewModel.cs" />
     <Compile Include="Models\ProductofCategory.cs" />
     <Compile Include="Models\ProductSModel.cs" />
     <Compile Include="Models\PRODUCT_ATTRIBUTE.cs">
@@ -344,6 +349,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Infacstructure\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

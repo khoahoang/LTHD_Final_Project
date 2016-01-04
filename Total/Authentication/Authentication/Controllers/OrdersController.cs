@@ -11,7 +11,7 @@ namespace Authentication.Controllers
     [RoutePrefix("api/Orders")]
     public class OrdersController : ApiController
     {
-        [Authorize]
+        [Authorize(Roles="Admin")]
         [Route("")]
         public IHttpActionResult Get()
         {

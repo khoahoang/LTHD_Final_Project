@@ -1,12 +1,15 @@
 ﻿using Authentication.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using Authentication.Entities;
+using System.Net;
 
 namespace Authentication
 {
@@ -30,10 +33,14 @@ namespace Authentication
             };
 
             var result = await _userManager.CreateAsync(user, userModel.Password);
+            if (result.Succeeded)
+            {
+                var currentUser = _userManager.FindByName(user.UserName);
 
+                var roleresult = _userManager.AddToRole(currentUser.Id, "Admin");
+            }
             return result;
         }
-
         public async Task<IdentityUser> FindUser(string userName, string password)
         {
             IdentityUser user = await _userManager.FindAsync(userName, password);
@@ -101,8 +108,20 @@ namespace Authentication
 
         public async Task<IdentityResult> CreateAsync(IdentityUser user)
         {
-            var result = await _userManager.CreateAsync(user);
+            //var result = await _userManager.CreateAsync(user);
 
+            IdentityUser userIden = new IdentityUser
+            {
+                UserName = user.UserName
+            };
+
+            var result = await _userManager.CreateAsync(user);
+            if (result.Succeeded)
+            {
+                var currentUser = _userManager.FindByName(user.UserName);
+
+                var roleresult = _userManager.AddToRole(currentUser.Id, "Member");
+            }
             return result;
         }
 
