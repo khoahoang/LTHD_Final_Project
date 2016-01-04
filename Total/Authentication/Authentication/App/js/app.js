@@ -52,6 +52,11 @@ mobileStoreApp.config(['$routeProvider',
               controller: 'SearchController'
           }).
 
+          when("/associate", {              
+              templateUrl: "app/template/user/associate.html",
+              controller: "AssociateController"
+          }).
+
           otherwise({
               redirectTo: '/home'
           });
