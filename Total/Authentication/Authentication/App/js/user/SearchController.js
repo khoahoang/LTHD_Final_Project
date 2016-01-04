@@ -7,7 +7,7 @@
           $scope.pro = product;
           $scope.SearchName = $routeParams.str;
 
-          $scope.totalItems = product.TotalPages;
+          $scope.totalItems = product.TotalPages * 10;
       });
 
     $scope.pageChanged = function () {

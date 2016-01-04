@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 mobileStoreApp.factory('authService', ['$http', '$q', 'localStorageService', 'ngAuthSettings', function ($http, $q, localStorageService, ngAuthSettings) {
  
     var serviceBase = 'http://localhost:41127/';
@@ -52,12 +52,14 @@ mobileStoreApp.factory('authService', ['$http', '$q', 'localStorageService', 'ng
  
     var _logOut = function () {
  
-        localStorageService.remove('authorizationData');
- 
-        _authentication.isAuth = false;
-        _authentication.userName = "";
-        _authentication.useRefreshTokens = false;
- 
+        var c = confirm("Bạn có muốn đăng xuất ??");
+        if (c == true) {
+            localStorageService.remove('authorizationData');
+
+            _authentication.isAuth = false;
+            _authentication.userName = "";
+            _authentication.useRefreshTokens = false;
+        }
     };
  
     var _fillAuthData = function () {
