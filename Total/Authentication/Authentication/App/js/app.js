@@ -52,6 +52,11 @@ mobileStoreApp.config(['$routeProvider',
               controller: 'SearchController'
           }).
 
+          when('/managerAccount', {
+              templateUrl: 'app/template/user/managerAccount.html',
+              controller: 'ManagerAccountController'
+          }).
+
           when("/associate", {              
               templateUrl: "app/template/user/associate.html",
               controller: "AssociateController"
