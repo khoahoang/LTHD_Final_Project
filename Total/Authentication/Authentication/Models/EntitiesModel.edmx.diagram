@@ -5,11 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="81d7351071cc4a0593025727b03f1cf2" Name="Diagram1">
-        <EntityTypeShape EntityType="MobileStoreServiceModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MobileStoreServiceModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MobileStoreServiceModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="MobileStoreServiceModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MobileStoreServiceModel.AspNetUser" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="MobileStoreServiceModel.ATTRIBUTE" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MobileStoreServiceModel.CART" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MobileStoreServiceModel.CATEGORY" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
@@ -23,9 +18,6 @@
         <EntityTypeShape EntityType="MobileStoreServiceModel.PRODUCT_CATEGORY" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MobileStoreServiceModel.PRODUCT_DESCRIPTION" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MobileStoreServiceModel.ROLE" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
-        <AssociationConnector ManuallyRouted="false" Association="MobileStoreServiceModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
-        <AssociationConnector ManuallyRouted="false" Association="MobileStoreServiceModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
-        <AssociationConnector ManuallyRouted="false" Association="MobileStoreServiceModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
