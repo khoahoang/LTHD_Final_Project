@@ -84,6 +84,11 @@ mobileStoreApp.factory('shoppingService', ['localStorageService', function (loca
         return list;
     }
 
+    var _clear = function () {
+        var items = [];
+        localStorageService.set('dataShopping', items);
+    }
+
     shopping.get = _get;
     shopping.set = _set;
     shopping.getAll = _getAll;
@@ -91,6 +96,7 @@ mobileStoreApp.factory('shoppingService', ['localStorageService', function (loca
     shopping.giam = _giam;
     shopping.them = _them;
     shopping.count = _count;
+    shopping.clear = _clear;
 
     return shopping;
 }]);

@@ -1,6 +1,6 @@
 <h2>Giỏ hàng của tui</h2>
 <div id="update-message"> </div>
-<table>
+<table ng-show="count > 0">
     <tr>
         <th>
             Model sản phẩm
@@ -12,7 +12,7 @@
             Số lượng
         </th>
         <th>
-            Tong
+            Tổng
         </th>
         <th>
             Chỉnh sửa
@@ -49,7 +49,7 @@
     </tr>
     <tr>
         <td colspan="4" style="text-align: right">
-            Tong cong: {{All | number}}
+            Tổng cộng: {{All | number}}
         </td>
     </tr>
 
@@ -85,6 +85,16 @@
 </table>
 <br />
 <p class="button">
-    <a href="#">Đặt hàng</a>
-    <!--@Html.ActionLink("Đặt hàng", "AddressAndOrder", "Order")-->
+    <a ng-hide="count > 0">Giỏ hàng chưa có sản phẩm nào</a>
+    <div ng-show="count > 0">
+        <input style="width: 400px" ng-model="name" ng-hide="!authentication.isAuth" type="text" class="form-control" placeholder="Họ tên khách hàng" />
+        <br />
+        <input style="width: 400px" ng-model="addr" ng-hide="!authentication.isAuth" type="text" class="form-control" placeholder="Địa chỉ" />
+        <br />
+        <input style="width: 400px" ng-model="phone" ng-hide="!authentication.isAuth" type="text" class="form-control" placeholder="Số điện thoại" />
+        <br />
+        <button style="width: 400px" class="btn btn-lg btn-info btn-block" ng-hide="!authentication.isAuth" ng-click="ThanhToan()">Đặt hàng</button>
+        <a ng-hide="authentication.isAuth" href="#/login">Vui lòng đăng nhập để đặt hàng</a>
+        <!--@Html.ActionLink("Đặt hàng", "AddressAndOrder", "Order")-->
+    </div>
 </p>

@@ -62,6 +62,11 @@ mobileStoreApp.config(['$routeProvider',
               controller: "AssociateController"
           }).
 
+          when("/order", {
+              templateUrl: "app/template/user/order.html",
+              controller: "OrdersController"
+          }).
+
           otherwise({
               redirectTo: '/home'
           });

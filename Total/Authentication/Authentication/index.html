@@ -44,7 +44,6 @@
     <script type="text/javascript" src="app/js/user/AddProductToShoppingCartController.js"></script>
     <script type="text/javascript" src="app/js/user/SearchController.js"></script>
     <script type="text/javascript" src="app/js/user/AssociateController.js"></script>
-    <script type="text/javascript" src="app/js/user/index.js"></script>
     
 
 </head>
@@ -97,7 +96,7 @@
                                    <a ng-hide="authentication.isAuth" href="index.html#/signup">Đăng kí</a>
                                     <span> | </span>
                                    <a ng-hide="authentication.isAuth" href="index.html#/login">Đăng nhập</a>
-                                   <a ng-hide="!authentication.isAuth" href="#" ng-click="logOut()">Đăng xuất</a>
+                                   <a ng-hide="!authentication.isAuth" ng-click="logOut()">Đăng xuất</a>
                                 </b>
                             </div>
                         </div>                        
