@@ -84,7 +84,7 @@
             <PropertyRef Name="ORDER_ID" />
           </Key>
           <Property Name="ORDER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CUSTOMER_ID" Type="int" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="ORDER_DATE" Type="datetime" Nullable="false" />
           <Property Name="NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ADDRESS" Type="nvarchar" MaxLength="100" Nullable="false" />
@@ -154,7 +154,7 @@
           <EntitySet Name="PRODUCT_CATEGORY" EntityType="Self.PRODUCT_CATEGORY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PRODUCT_DESCRIPTION" EntityType="Self.PRODUCT_DESCRIPTION" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ROLE" EntityType="Self.ROLE" Schema="dbo" store:Type="Tables" />
-          </EntityContainer>
+        </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -238,7 +238,6 @@
             <PropertyRef Name="ORDER_ID" />
           </Key>
           <Property Name="ORDER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CUSTOMER_ID" Type="Int32" Nullable="false" />
           <Property Name="ORDER_DATE" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
@@ -246,6 +245,7 @@
           <Property Name="PAID" Type="Int32" Nullable="false" />
           <Property Name="TOTAL" Type="Double" Nullable="false" />
           <Property Name="DELETED" Type="Int32" />
+          <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="PRODUCT">
           <Key>
@@ -398,8 +398,8 @@
           <EntitySetMapping Name="ORDERS">
             <EntityTypeMapping TypeName="MobileStoreServiceModel.ORDER">
               <MappingFragment StoreEntitySet="ORDERS">
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
                 <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
-                <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
                 <ScalarProperty Name="ORDER_DATE" ColumnName="ORDER_DATE" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
                 <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />

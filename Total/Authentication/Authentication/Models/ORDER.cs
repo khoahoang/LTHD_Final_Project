@@ -15,7 +15,6 @@ namespace Authentication.Models
     public partial class ORDER
     {
         public int ORDER_ID { get; set; }
-        public int CUSTOMER_ID { get; set; }
         public System.DateTime ORDER_DATE { get; set; }
         public string NAME { get; set; }
         public string ADDRESS { get; set; }
@@ -23,5 +22,6 @@ namespace Authentication.Models
         public int PAID { get; set; }
         public double TOTAL { get; set; }
         public Nullable<int> DELETED { get; set; }
+        public string USERNAME { get; set; }
     }
 }
