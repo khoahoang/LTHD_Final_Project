@@ -29,21 +29,70 @@
     </script>-->
 
 <h1>Quản lý sản phẩm</h1>
-Search: <input type="text" ng-model="strSearch"/>
-<br/>
-<table class="table-condensed">
+<h3>Thêm sản phẩm</h3>
+<table>
     <thead>
         <tr>
             <th>
-                Model
+                Tên sản phẩm
             </th>
             <th>
                 Giá
             </th>
             <th>
+                Danh mục
+            </th>
+            <th>
+                Nhà sản xuất
+            </th>
+            <th>
+                Thao tác
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <input class="form-control" ng-model="nameadd" />
+            </td>
+            <td>
+                <input class="form-control" ng-model="priceadd" />
+            </td>
+            <td>
+                <select class="form-control" ng-model="catadd">
+                    <option ng-repeat="y in cats">{{y.CATEGORY_NAME}}</option>
+                </select>
+            </td>
+            <td>
+                <select class="form-control" ng-model="manadd">
+                    <option ng-repeat="y in mans">{{y.MANUFACTURE_NAME}}</option>
+                </select>
+            </td>
+            <td>
+                <input class="btn btn-success" type="button" value="Thêm" ng-click="them()" />
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+Search: <input class="form-control" type="text" ng-model="strSearch" />
+<br />
+<table class="table-condensed" border="1">
+    <thead>
+        <tr>
+            <th>
+                Tên sản phẩm
+            </th>
+            <th>
+                Giá
+            </th>
+            <th>
+                Danh mục
+            </th>
+            <th>
                 NSX
             </th>
-            <th colspan="2" style="text-align: center">
+            <th colspan="3" style="text-align: center">
                 Thao tác
             </th>
         </tr>
@@ -52,15 +101,22 @@ Search: <input type="text" ng-model="strSearch"/>
         <tr ng-repeat="x in list | filter : strSearch" ng-hide="x.Delete">
             <td style="text-align: left">
                 <span ng-hide="x.Editing">{{x.Name}}</span>
-                <input type="text" ng-show="x.Editing" ng-model="x.Name" ng-blur="doneEditing(x)" />
+                <input class="form-control" type="text" ng-show="x.Editing" ng-model="x.Name" ng-blur="doneEditing(x)" />
             </td>
             <td>
                 <span ng-hide="x.Editing">{{x.Price | number}}</span>
-                <input type="text" ng-show="x.Editing" ng-model="x.Price" ng-blur="doneEditing(x)" />
+                <input class="form-control" type="text" ng-show="x.Editing" ng-model="x.Price" ng-blur="doneEditing(x)" />
+            </td>
+            <td>
+                <span ng-hide="x.Editing">{{x.Category}}</span>
+                <select class="form-control" ng-show="x.Editing" ng-model="x.Category" ng-blur="doneEditing(x)">
+                    <option ng-repeat="y in cats">{{y.CATEGORY_NAME}}</option>
+                </select>
+                <!--<input type="text" ng-show="x.Editing" ng-model="x.NSX" ng-blur="doneEditing(x)" />-->
             </td>
             <td>
                 <span ng-hide="x.Editing">{{x.NSX}}</span>
-                <select ng-show="x.Editing" ng-model="x.NSX" ng-blur="doneEditing(x)">
+                <select class="form-control" ng-show="x.Editing" ng-model="x.NSX" ng-blur="doneEditing(x)">
                     <option ng-repeat="y in mans">{{y.MANUFACTURE_NAME}}</option>
                 </select>
                 <!--<input type="text" ng-show="x.Editing" ng-model="x.NSX" ng-blur="doneEditing(x)" />-->
@@ -68,6 +124,11 @@ Search: <input type="text" ng-model="strSearch"/>
             <td>
                 <a ng-click="editItem(x)" style="float:left; text-decoration:none">
                     Chỉnh sửa
+                </a>
+            </td>
+            <td>
+                <a href="#/productimg/{{x.ID}}">
+                    Hình ảnh
                 </a>
             </td>
             <td>
@@ -99,6 +160,6 @@ Search: <input type="text" ng-model="strSearch"/>
 </table>
 
 <uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></uib-pagination>
-    <!--<p style="color:red">Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount</p>
-    @Html.PagedListPager(Model, page => Url.Action("ManageProduct", "Admin",
-    new { page }))-->
+<!--<p style="color:red">Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount</p>
+@Html.PagedListPager(Model, page => Url.Action("ManageProduct", "Admin",
+new { page }))-->

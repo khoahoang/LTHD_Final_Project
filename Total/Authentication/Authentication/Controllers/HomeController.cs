@@ -25,6 +25,14 @@ namespace MobileSt.Controllers
             return Request.CreateResponse(httpStatusCode);
         }
         #endregion
+        [Authorize(Roles = "Admin")]
+        [HttpGet]
+        [Route("api/home/getadmin")]
+        public HttpResponseMessage GetAdmin()
+        {
+            return CreateResponse(HttpStatusCode.OK);
+        }
+
         [HttpGet]
         public HttpResponseMessage index()
         {
