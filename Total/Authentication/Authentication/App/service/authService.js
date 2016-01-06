@@ -117,7 +117,7 @@ mobileStoreApp.factory('authService', ['$http', '$q', 'localStorageService', 'ng
             _authentication.isAuth = true;
             _authentication.userName = response.userName;
             _authentication.useRefreshTokens = false;
-            _authentication.role = reponse.role;
+            _authentication.role = response.role;
 
             deferred.resolve(response);
 
