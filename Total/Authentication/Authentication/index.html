@@ -92,7 +92,7 @@
                                     <span> | </span>
                                     @Html.ActionLink("Đăng nhập", "Login", "Account")
                                 }-->
-                                   <a ng-hide="!authentication.isAuth" href="#">Welcome {{authentication.userName}}</a>
+                                   <a ng-hide="!authentication.isAuth" href="#">{{authentication.userName}}</a>
                                    <a ng-hide="authentication.isAuth" href="index.html#/signup">Đăng kí</a>
                                     <span> | </span>
                                    <a ng-hide="authentication.isAuth" href="index.html#/login">Đăng nhập</a>
