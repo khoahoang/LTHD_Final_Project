@@ -59,6 +59,8 @@
             $scope.priceadd = "";
             $scope.manadd = "";
             $scope.catadd = "";
+
+            window.alert('Thêm thành công');
         })
     }
 })
