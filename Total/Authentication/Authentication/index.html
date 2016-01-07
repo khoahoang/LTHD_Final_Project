@@ -94,6 +94,7 @@
                                     @Html.ActionLink("Đăng nhập", "Login", "Account")
                                 }-->
                                    <a ng-hide="!authentication.isAuth" href="#">{{authentication.userName}}</a>
+                                   <a ng-hide="authentication.isAuth" href="index.html#/signup">Đăng kí</a> |
                                    <a ng-hide="authentication.isAuth" href="index.html#/login">Đăng nhập</a>
                                    <a ng-hide="!authentication.isAuth" ng-click="logOut()">Đăng xuất</a>
                                 </b>

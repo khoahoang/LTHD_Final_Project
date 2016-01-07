@@ -3,9 +3,9 @@
 	<h2>Đăng nhập</h2>
     <button class="btn btn-large btn-google-plus btn-block" type="button" data-ng-click="authExternalProvider('Google')"><i class="fa fa-google-plus"></i> | Connect with Google+</button>
     <br />
-    <input class="btn btn-success" value="Đăng nhập quyền admin" ng-click="isAdmin = !isAdmin" />
+    <input class="btn btn-success" value="Đăng nhập quyền admin" ng-click="isAdmin = !isAdmin" type="button" />
     <br />
-    <div class="row" ng-hide="!isAdmin">
+    <div class="row login-admin" ng-hide="!isAdmin">
         <form role="form" class="form-horizontal">
             <input type="text" class="form-control" placeholder="Tên tài khoản" data-ng-model="loginData.userName" required autofocus>
             <br />
